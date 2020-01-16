@@ -16,3 +16,17 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+Route::get('/building' , function(){
+
+	$building = [
+
+	'building_name' => 'st clair',
+	'building_address' => 'north talbot'
+
+	];
+
+	return $building;
+});
