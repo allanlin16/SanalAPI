@@ -45,4 +45,14 @@ class BuildingController extends Controller
         return new BuildingResource($building);
 
     }
+
+    public  function update(Building $building, Request $request): BuildingResource {
+
+        
+        $building->update($request->all());
+
+
+        return new BuildingResource($building);
+
+    }
 }
