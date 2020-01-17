@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,16 +16,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//calls function BuildingController show
+//Route::get('/building/{building}' , 'BuildingController@show');
 
-
-Route::get('/building' , function(){
-
-	$building = [
-
-	'building_name' => 'st clair',
-	'building_address' => 'north talbot'
-
-	];
-
-	return $building;
-});
+Route::apiResource('/building' , 'BuildingController');
