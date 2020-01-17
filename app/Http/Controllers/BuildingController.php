@@ -46,13 +46,18 @@ class BuildingController extends Controller
 
     }
 
+    // update db
     public  function update(Building $building, Request $request): BuildingResource {
 
-        
         $building->update($request->all());
 
-
         return new BuildingResource($building);
+    }
+    
 
+    public function destroy(Building $building) {
+        $building->delete();
+
+        return response()->json();
     }
 }
