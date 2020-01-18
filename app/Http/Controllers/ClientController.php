@@ -23,6 +23,7 @@ class ClientController extends Controller
        return new ClientResourceCollection(Client::paginate());
    }
 
+   //create new client
     public function store(Request $request) {
 
         $request->validate([
@@ -39,6 +40,15 @@ class ClientController extends Controller
 
         return new ClientResource($client);
 
+    }
+
+
+    // update client info
+    public function update(Client $client, Request $request): ClientResource {
+
+        $client->update($request->all());
+
+        return new ClientResource($client);
     }
 
 }
