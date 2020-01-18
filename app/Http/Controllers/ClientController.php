@@ -51,4 +51,11 @@ class ClientController extends Controller
         return new ClientResource($client);
     }
 
+    //delete client from db
+    public function destroy(Client $client) {
+        $client->delete();
+
+        return response()->json();
+    }
+
 }
