@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 |
 */
 
+use App\Client;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -20,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Route::get('/building/{building}' , 'BuildingController@show');
 
 Route::apiResource('/building' , 'BuildingController');
+
+Route::apiResource('/client' , 'ClientController');
