@@ -48,5 +48,13 @@ class ExtinguisherController extends Controller
 
     }
 
+    // update client info
+    public function update(Extinguisher $extinguisher, Request $request): ExtinguisherResource {
+
+        $extinguisher->update($request->all());
+
+        return new ExtinguisherResource($extinguisher);
+    }
+
 
 }
