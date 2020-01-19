@@ -23,3 +23,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('/building' , 'BuildingController');
 
 Route::apiResource('/client' , 'ClientController');
+
+Route::apiResource('/extinguisher' , 'ExtinguisherController');
