@@ -50,7 +50,22 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('google')->user();
+        //$user = Socialite::driver('google')->user();
+
+        $providerUser = Socialite::driver('google')->stateless()->user();
+
+        $user = User::query()->firstOrNew(['email' => $providerUser->getEmail()]);
+
+        if (!$user->exists) {
+            $user->name = $providerUser->getName();
+            $user->save();
+        }
+
+        $token = JWTAuth::fromUser($user);
+
+        return new JsonResponse([
+            'token' => $token
+        ]);
 
         // $user->token;
     }
