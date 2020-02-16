@@ -37,4 +37,36 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('google')->stateless()->user();
+    }
+
+    /**
+     * Obtain the user information from Google.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback()
+    {
+        //$user = Socialite::driver('google')->user();
+
+        $providerUser = Socialite::driver('google')->stateless()->user();
+
+        $user = User::query()->firstOrNew(['email' => $providerUser->getEmail()]);
+
+        if (!$user->exists) {
+            $user->name = $providerUser->getName();
+            $user->save();
+        }
+
+        $token = JWTAuth::fromUser($user);
+
+        return new JsonResponse([
+            'token' => $token
+        ]);
+
+        // $user->token;
+    }
 }
