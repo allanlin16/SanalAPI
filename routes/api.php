@@ -25,3 +25,7 @@ Route::apiResource('/building' , 'BuildingController');
 Route::apiResource('/client' , 'ClientController');
 
 Route::apiResource('/extinguisher' , 'ExtinguisherController');
+
+Route::get("hello", function() {
+    return "hello world";
+});
