@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Extinguisher;
-class ExtinguisherTableSeeder extends Seeder
+use App\Building;
+class BuildingTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class ExtinguisherTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Extinguisher::class, 5)->create();
+        factory(Building::class, 5)->create();
     }
 }

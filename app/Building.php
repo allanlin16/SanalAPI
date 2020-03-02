@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Building extends Model
 {
-    //
 
     protected  $fillable = [
         'building_name',
@@ -14,4 +13,13 @@ class Building extends Model
         'building_city',
         'building_postalcode',
     ];
+
+    public function client() {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function extinguisher() {
+        return $this->hasMany(Extinguisher::class);
+    }
+
 }

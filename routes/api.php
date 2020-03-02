@@ -26,6 +26,6 @@ Route::apiResource('/client' , 'ClientController');
 
 Route::apiResource('/extinguisher' , 'ExtinguisherController');
 
-Route::get("hello", function() {
-    return "hello world";
-});
+//Route::get("hello", function() {
+//    return "hello world";
+//});
