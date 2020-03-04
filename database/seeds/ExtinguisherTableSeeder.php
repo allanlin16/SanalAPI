@@ -11,6 +11,6 @@ class ExtinguisherTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Extinguisher::class, 25)->create();
+        factory(Extinguisher::class, 5)->create();
     }
 }

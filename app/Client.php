@@ -12,4 +12,12 @@ class Client extends Model
         'client_address',
         'client_email',
     ];
+
+    public function building() {
+        return $this->hasMany(Building::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
