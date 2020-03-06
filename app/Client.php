@@ -11,6 +11,7 @@ class Client extends Model
         'client_phone',
         'client_address',
         'client_email',
+        'user_id'
     ];
 
     public function building() {
