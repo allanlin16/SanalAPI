@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Laravel\Passport\Passport;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -45,6 +47,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+        Passport::routes();
 
         //
     }
@@ -72,7 +75,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        //domain from env file 
+        //domain from env file
         Route::domain(env('API_DOMAIN'))
              ->middleware('api')
              ->namespace($this->namespace)

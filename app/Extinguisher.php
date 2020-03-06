@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Extinguisher extends Model
 {
-    protected  $fillable = [
 
+    public function building() {
+        return $this->belongsTo(Building::class);
+    }
+
+    protected  $fillable = [
         'extinguisher_make',
         'extinguisher_serialnumber',
         'extinguisher_barcodenumber',
@@ -22,7 +26,7 @@ class Extinguisher extends Model
         'extinguisher_nextservicedate',
         'extinguisher_comment',
         'extinguisher_status'
-
-
     ];
+
+
 }

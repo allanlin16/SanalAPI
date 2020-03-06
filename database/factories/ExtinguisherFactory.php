@@ -20,6 +20,9 @@ $factory->define(Extinguisher::class, function (Faker $faker) {
         'extinguisher_servicedate' => $faker->date('Y-m-d'),
         'extinguisher_nextservicedate' => $faker->date('Y-m-d'),
         'extinguisher_comment' => $faker->text,
-        'extinguisher_status' => $faker->text
+        'extinguisher_status' => $faker->text,
+        'building_id' => function () {
+            return factory(App\Building::class)->create()->id;
+        }
     ];
 });

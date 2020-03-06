@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Http\Resources\ClientResource;
 use App\Http\Resources\ClientResourceCollection;
+use App\User;
 use Illuminate\Http\Request;
+use Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class ClientController extends Controller
@@ -18,24 +21,36 @@ class ClientController extends Controller
    }
 
    //return all client in database
-   public function index() : ClientResourceCollection{
+   public function index(Request $request) : ClientResourceCollection{
 
-       return new ClientResourceCollection(Client::paginate());
+       //client user_id
+       $userId = $request->query('user_id');
+
+       $client = Client::where('user_id', '=', $userId)->paginate(15);
+
+       print($userId);
+
+
+
+       return new ClientResourceCollection($client);
    }
 
    //create new client
     public function store(Request $request) {
+
+        $user = Auth::user();
 
         $request->validate([
             'client_name' => 'required',
             'client_phone' => 'required',
             'client_address' => 'required',
             'client_email' => 'required',
-
+            'user_id' => 'required',
 
         ]);
 
-        // creates a building once pass validation
+
+        // creates a client once pass validation
         $client = Client::create($request->all());
 
         return new ClientResource($client);
