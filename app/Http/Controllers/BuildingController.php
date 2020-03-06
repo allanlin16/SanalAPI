@@ -35,8 +35,6 @@ class BuildingController extends Controller
             'building_address' => 'required',
             'building_city' => 'required',
             'building_postalcode' => 'required',
-
-
         ]);
 
         // creates a building once pass validation
@@ -53,7 +51,7 @@ class BuildingController extends Controller
 
         return new BuildingResource($building);
     }
-    
+
 
     public function destroy(Building $building) {
         $building->delete();

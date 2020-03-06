@@ -42,6 +42,7 @@ Route::group([
 });
 
 //Route::get("hello", function() {
-//    return "hello world";
-
+//    $user = Auth::user();
+//    print($user->id);
+//
 //});
