@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="851ef457-3cf1-482a-9f30-806becc172e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Building.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Building.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Extinguisher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Extinguisher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BuildingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BuildingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExtinguisherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExtinguisherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ExtinguisherFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ExtinguisherFactory.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +201,11 @@
       <screen x="0" y="23" width="1280" height="726" />
     </state>
     <state x="402" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1280.726@0.23.1280.726" timestamp="1579230259297" />
+    <state x="378" y="144" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583506458458">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="378" y="143" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.717@0.23.1280.717" timestamp="1583462556437" />
+    <state x="378" y="144" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.722@0.23.1280.722" timestamp="1583506458458" />
     <state x="297" y="28" key="#phpunit.xml" timestamp="1579217130765">
       <screen x="0" y="23" width="1280" height="726" />
     </state>

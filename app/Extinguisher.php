@@ -19,13 +19,14 @@ class Extinguisher extends Model
         'extinguisher_locationdescription',
         'extinguisher_type',
         'extinguisher_rating',
-        'extinguisher_size',
         'extinguisher_manufacturedate',
         'extinguisher_htestdate',
         'extinguisher_servicedate',
         'extinguisher_nextservicedate',
         'extinguisher_comment',
-        'extinguisher_status'
+        'extinguisher_status',
+        'extinguisher_photourl',
+        'building_id'
     ];
 
 

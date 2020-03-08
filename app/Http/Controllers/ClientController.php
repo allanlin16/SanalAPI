@@ -28,10 +28,6 @@ class ClientController extends Controller
 
        $client = Client::where('user_id', '=', $userId)->paginate(15);
 
-       print($userId);
-
-
-
        return new ClientResourceCollection($client);
    }
 

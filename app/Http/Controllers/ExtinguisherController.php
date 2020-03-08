@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Building;
 use App\Extinguisher;
 use App\Http\Resources\ExtinguisherResource;
 use App\Http\Resources\ExtinguisherResourceCollection;
@@ -16,9 +17,13 @@ class ExtinguisherController extends Controller
     }
 
     //return all extinguisher in database
-    public function index() : ExtinguisherResourceCollection{
+    public function index(Request $request) : ExtinguisherResourceCollection{
+        $buildingId = $request->query('building_id');
 
-        return new ExtinguisherResourceCollection(Extinguisher::paginate());
+
+        $building = Extinguisher::where('building_id', '=', $buildingId)->paginate(15);
+
+        return new ExtinguisherResourceCollection($building);
     }
 
     //create new extinguisher
@@ -32,13 +37,14 @@ class ExtinguisherController extends Controller
             'extinguisher_locationdescription' => 'required',
             'extinguisher_type' => 'required',
             'extinguisher_rating' => 'required',
-            'extinguisher_size' => 'required',
             'extinguisher_manufacturedate' => 'required',
             'extinguisher_htestdate' => 'required',
             'extinguisher_servicedate' => 'required',
             'extinguisher_nextservicedate' => 'required',
             'extinguisher_comment' => 'required',
-            'extinguisher_status' => 'required'
+            'extinguisher_status' => 'required',
+            'extinguisher_photourl' => 'required',
+            'building_id' => 'required'
         ]);
 
         // creates a extinguisher once pass validation
