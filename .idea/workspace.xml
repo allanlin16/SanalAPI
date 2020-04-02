@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="851ef457-3cf1-482a-9f30-806becc172e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Building.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Building.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Extinguisher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Extinguisher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BuildingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BuildingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExtinguisherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExtinguisherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ExtinguisherFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ExtinguisherFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +128,28 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
     </include_path>
   </component>
   <component name="ProjectId" id="1WUfxui7CmZFKmZewBSct0Wklfp" />
@@ -186,6 +205,10 @@
       <workItem from="1579211464891" duration="819000" />
       <workItem from="1579217106395" duration="9450000" />
       <workItem from="1579230668086" duration="2520000" />
+      <workItem from="1583809937471" duration="1510000" />
+      <workItem from="1584109244524" duration="3163000" />
+      <workItem from="1585524012409" duration="323000" />
+      <workItem from="1585861841279" duration="259000" />
     </task>
     <servers />
   </component>
@@ -197,6 +220,10 @@
       <screen x="0" y="23" width="1280" height="724" />
     </state>
     <state x="232" y="69" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.724@0.23.1280.724" timestamp="1579219271541" />
+    <state x="385" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584113671808">
+      <screen x="0" y="23" width="1280" height="730" />
+    </state>
+    <state x="385" y="197" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.730@0.23.1280.730" timestamp="1584113671807" />
     <state x="402" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579230259297">
       <screen x="0" y="23" width="1280" height="726" />
     </state>
@@ -214,11 +241,17 @@
       <screen x="0" y="23" width="1280" height="724" />
     </state>
     <state width="234" height="457" key="HiddenNamespacesPopup/0.23.1280.724@0.23.1280.724" timestamp="1579219282386" />
-    <state x="319" y="218" key="com.intellij.ide.util.TipDialog" timestamp="1579230667885">
-      <screen x="0" y="23" width="1280" height="725" />
+    <state x="319" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1585861846833">
+      <screen x="0" y="23" width="1280" height="729" />
     </state>
     <state x="319" y="218" key="com.intellij.ide.util.TipDialog/0.23.1280.725@0.23.1280.725" timestamp="1579230667885" />
     <state x="319" y="218" key="com.intellij.ide.util.TipDialog/0.23.1280.726@0.23.1280.726" timestamp="1579217117893" />
     <state x="319" y="219" key="com.intellij.ide.util.TipDialog/0.23.1280.728@0.23.1280.728" timestamp="1579211474042" />
+    <state x="319" y="219" key="com.intellij.ide.util.TipDialog/0.23.1280.729@0.23.1280.729" timestamp="1585861846833" />
+    <state x="319" y="219" key="com.intellij.ide.util.TipDialog/0.23.1280.730@0.23.1280.730" timestamp="1583809938034" />
+    <state x="305" y="76" width="670" height="676" key="search.everywhere.popup" timestamp="1584113263378">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="305" y="76" width="670" height="676" key="search.everywhere.popup/0.23.1280.729@0.23.1280.729" timestamp="1584113263378" />
   </component>
 </project>

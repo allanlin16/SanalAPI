@@ -34,8 +34,6 @@ class ClientController extends Controller
    //create new client
     public function store(Request $request) {
 
-        $user = Auth::user();
-
         $request->validate([
             'client_name' => 'required',
             'client_phone' => 'required',
