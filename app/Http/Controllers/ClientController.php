@@ -28,17 +28,11 @@ class ClientController extends Controller
 
        $client = Client::where('user_id', '=', $userId)->paginate(15);
 
-       print($userId);
-
-
-
        return new ClientResourceCollection($client);
    }
 
    //create new client
     public function store(Request $request) {
-
-        $user = Auth::user();
 
         $request->validate([
             'client_name' => 'required',
