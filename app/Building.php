@@ -12,6 +12,7 @@ class Building extends Model
         'building_address',
         'building_city',
         'building_postalcode',
+        'client_id',
     ];
 
     public function client() {

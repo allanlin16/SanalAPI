@@ -21,9 +21,13 @@ class BuildingController extends Controller
      * @return BuildingResourceCollection
      * display * in the building table
      */
-    public function index(): BuildingResourceCollection {
+    public function index(Request $request): BuildingResourceCollection {
 
-        return new BuildingResourceCollection(Building::paginate());
+        $clientId = $request->query('client_id');
+
+        $building = Building::where('client_id', '=', $clientId)->paginate(15);
+
+        return new BuildingResourceCollection($building);
 
     }
 
@@ -35,6 +39,7 @@ class BuildingController extends Controller
             'building_address' => 'required',
             'building_city' => 'required',
             'building_postalcode' => 'required',
+            'client_id' => 'required'
         ]);
 
         // creates a building once pass validation

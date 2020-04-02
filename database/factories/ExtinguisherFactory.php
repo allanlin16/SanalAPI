@@ -14,7 +14,6 @@ $factory->define(Extinguisher::class, function (Faker $faker) {
         'extinguisher_locationdescription' => $faker->text,
         'extinguisher_type' => $faker->text,
         'extinguisher_rating' => $faker->text,
-        'extinguisher_size' => $faker->randomDigit,
         'extinguisher_manufacturedate' => $faker->date('Y-m-d'),
         'extinguisher_htestdate' => $faker->date('Y-m-d'),
         'extinguisher_servicedate' => $faker->date('Y-m-d'),
@@ -23,6 +22,7 @@ $factory->define(Extinguisher::class, function (Faker $faker) {
         'extinguisher_status' => $faker->text,
         'building_id' => function () {
             return factory(App\Building::class)->create()->id;
-        }
+        },
+        'extinguisher_photourl' => $faker->text
     ];
 });
