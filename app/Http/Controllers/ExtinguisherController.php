@@ -7,6 +7,7 @@ use App\Extinguisher;
 use App\Http\Resources\ExtinguisherResource;
 use App\Http\Resources\ExtinguisherResourceCollection;
 use Illuminate\Http\Request;
+use function GuzzleHttp\Promise\queue;
 
 class ExtinguisherController extends Controller
 {
@@ -47,6 +48,8 @@ class ExtinguisherController extends Controller
             'building_id' => 'required'
         ]);
 
+
+
         // creates a extinguisher once pass validation
         $extinguisher = Extinguisher::create($request->all());
 
@@ -67,6 +70,47 @@ class ExtinguisherController extends Controller
         $extinguisher->delete();
 
         return response()->json();
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function fileUpload()
+    {
+        return view('fileUpload');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function fileUploadPost(Request $request)
+    {
+
+        request()->validate([
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $destinationPath = public_path('/images');
+        //print $destinationPath;
+        $image = $request->file('file');
+
+        $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+        $image->move($destinationPath, $input['imagename']);
+
+
+        $dbPath = 'images/'.$input['imagename'];
+        //extinguisher/id/fileupload
+        $extinguisher = Extinguisher::find('id');
+        $extinguisher->extinguisher_serialnumber = request('imagename');
+        $extinguisher->extinguisher_photourl = $dbPath;
+
+        $extinguisher->save();
+        return back()->with('success','Image Upload successful');
+
     }
 
 

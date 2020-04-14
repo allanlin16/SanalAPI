@@ -28,20 +28,17 @@ Route::apiResource('/extinguisher' , 'ExtinguisherController');
 Route::group([
     'prefix' => 'auth'
 ], function () {
-    //Route::post('login', 'AuthController@login'); //Use built-in login from slides
-    Route::post('/signup', 'AuthController@signup');
-    Route::get('signup/activate/{token}', 'AuthController@signupActivate');
+    Route::post('login', 'AuthController@login'); //Use built-in login from slides
+    Route::post('signup', 'AuthController@signup');
 
     Route::group([
         'middleware' => 'auth:api'
     ], function() {
-        //Route::get('logout', 'AuthController@logout'); //Use built-in logout from slides
+        Route::get('logout', 'AuthController@logout'); //Use built-in logout from slides
         Route::get('user', 'AuthController@user');
     });
 });
 
-//Route::get("hello", function() {
-//    $user = Auth::user();
-//    print($user->id);
-//
-//});
+Route::get('file-upload', 'ExtinguisherController@fileUpload')->name('file.upload');
+Route::post('file-upload', 'ExtinguisherController@fileUploadPost')->name('file.upload.post');
+
