@@ -26,15 +26,17 @@ class AuthController extends Controller
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed'
+
         ]);
+
         $user = new User([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'activation_token' => str_random(60)
         ]);
+        $user->active = true;
         $user->save();
-        $user->notify(new SignupActivate($user));
         return response()->json([
             'message' => 'Successfully created user!'
         ], 201);
@@ -80,18 +82,7 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     * Logout user (Revoke the token)
-     *
-     * @return [string] message
-     */
-    public function logout(Request $request)
-    {
-        $request->user()->token()->revoke();
-        return response()->json([
-            'message' => 'Successfully logged out'
-        ]);
-    }
+
 
     /**
      * Get the authenticated User
@@ -103,17 +94,4 @@ class AuthController extends Controller
         return response()->json($request->user());
     }
 
-    public function signupActivate($token)
-    {
-        $user = User::where('activation_token', $token)->first();
-        if (!$user) {
-            return response()->json([
-                'message' => 'This activation token is invalid.'
-            ], 404);
-        }
-        $user->active = true;
-        $user->activation_token = '';
-        $user->save();
-        return $user;
-    }
 }
