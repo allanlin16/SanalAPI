@@ -72,22 +72,13 @@ class ExtinguisherController extends Controller
         return response()->json();
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function fileUpload()
-    {
-        return view('fileUpload');
-    }
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function fileUploadPost(Request $request)
+    public function fileUploadPost(Request $request, $id)
     {
 
         request()->validate([
@@ -103,13 +94,14 @@ class ExtinguisherController extends Controller
 
 
         $dbPath = 'images/'.$input['imagename'];
+
+        print ($dbPath);
         //extinguisher/id/fileupload
-        $extinguisher = Extinguisher::find('id');
-        $extinguisher->extinguisher_serialnumber = request('imagename');
+        $extinguisher = Extinguisher::find($id);
         $extinguisher->extinguisher_photourl = $dbPath;
 
         $extinguisher->save();
-        return back()->with('success','Image Upload successful');
+        return new ExtinguisherResource($extinguisher);
 
     }
 
