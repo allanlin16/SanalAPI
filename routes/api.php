@@ -39,6 +39,6 @@ Route::group([
     });
 });
 
-Route::get('file-upload', 'ExtinguisherController@fileUpload')->name('file.upload');
-Route::post('file-upload', 'ExtinguisherController@fileUploadPost')->name('file.upload.post');
+//extinguisher/id/fileupload
+Route::post('extinguisher/{id}/file-upload', 'ExtinguisherController@fileUploadPost')->name('file.upload.post');
 
